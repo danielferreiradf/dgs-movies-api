@@ -1,0 +1,32 @@
+extend type Query {
+    movies(movieFilter: MovieFilter): [Movie]
+    movie(id: ID!): Movie!
+}
+
+extend type Mutation {
+  newMovie(input: MovieInput!): Movie
+}
+
+input MovieInput {
+    name: String!
+    description: String!
+    releaseDate: String!
+    directorId: Int!
+}
+
+type Movie {
+    id: ID
+    name: String
+    description: String
+    releaseDate: String
+    director: Director
+}
+
+input MovieFilter {
+  name: String!
+}
+
+
+
+
+

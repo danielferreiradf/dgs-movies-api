@@ -21,7 +21,8 @@ class MovieService(private val movieRepository: MovieRepository) {
                     id = movie.id,
                     name = movie.name,
                     description = movie.description,
-                    releaseDate = movie.releaseDate
+                    releaseDate = movie.releaseDate,
+                    director = movie.director
                 )
             )
         } else throw ResponseStatusException(HttpStatus.NOT_FOUND, "No matching movie was found")

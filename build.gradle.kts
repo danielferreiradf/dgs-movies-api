@@ -27,6 +27,8 @@ dependencies {
 	runtimeOnly("com.h2database:h2")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.postgresql:postgresql")
+	implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:latest.release"))
+	implementation("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter")
 }
 
 tasks.withType<KotlinCompile> {
