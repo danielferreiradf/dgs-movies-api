@@ -18,7 +18,7 @@ class DirectorService(private val directorRepository: DirectorRepository) {
         return if (directorRepository.existsById(directorId)) {
             directorRepository.save(
                 Director(
-                    id = director.id,
+                    id = directorId,
                     name = director.name,
                     movies = director.movies
                 )
@@ -26,7 +26,7 @@ class DirectorService(private val directorRepository: DirectorRepository) {
         } else throw ResponseStatusException(HttpStatus.NOT_FOUND, "No matching director was found")
     }
 
-    fun deleteDirectorById(directorId: Long) {
+    fun deleteDirectorById(directorId: Long): Unit {
         return if (directorRepository.existsById(directorId)) {
             directorRepository.deleteById(directorId)
         } else throw ResponseStatusException(HttpStatus.NOT_FOUND, "No matching director was found")
