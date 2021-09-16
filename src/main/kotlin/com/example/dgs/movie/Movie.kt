@@ -17,5 +17,7 @@ data class Movie (
     @Column(name = "release_date", nullable = false)
     val releaseDate: LocalDate,
     @ManyToOne(fetch = FetchType.LAZY)
-    val director: Director? = null
+    val director: Director? = null,
+    @Column(name = "director_id", insertable = false, updatable = false)
+    val directorId: Long
 )
